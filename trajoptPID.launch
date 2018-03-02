@@ -1,0 +1,21 @@
+<launch>
+
+	<!-- Participant ID -->
+	<arg name="ID" default="0"/>
+
+	<!-- Experimental task (0,1,2,3) -->
+	<arg name="task" default="0"/> 
+
+	<!-- Method type ('A'- impedance, 'B'- learning, 'C'- demonstration) -->
+	<arg name="methodType" default="A"/>
+
+	<!-- Demo mode ('T' - demo with optimal weights, 'F' - default weights) -->
+	<arg name="demo" default="F"/>
+
+	<!-- Record data mode -->
+	<arg name="record" default="F"/>
+
+	<!-- velocity-based with trajopt planning PID -->
+	<node name="pid_trajopt" pkg="iact_control" type="pid_trajopt.py" args="$(arg ID) $(arg task) $(arg methodType) $(arg demo) $(arg record)" output="screen"/>
+
+</launch>
