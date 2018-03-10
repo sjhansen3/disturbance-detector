@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import kinova_msgs.msg
 import geometry_msgs.msg
 from kinova_msgs.srv import *
